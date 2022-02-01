@@ -43,18 +43,18 @@ function setup_hosts_file() {
 
 function check_branch_in_hosts_file() {
 
-	match=0
-	for branch in $(cat "$hosts_file" | shyaml keys); do
-		[[ "$GITHUB_REF" = "refs/heads/$branch" ]] && \
-		echo "$GITHUB_REF matches refs/heads/$branch" && \
-		match=1
-	done
+	#match=0
+	#for branch in $(cat "$hosts_file" | shyaml keys); do
+	#	[[ "$GITHUB_REF" = "refs/heads/$branch" ]] && \
+	#	echo "$GITHUB_REF matches refs/heads/$branch" && \
+	#	match=1
+	#done
 
 	# Exit neutral if no match found
-	if [[ "$match" -eq 0 ]]; then
-		echo "$GITHUB_REF does not match with any given branch in 'hosts.yml'"
-		exit 78
-	fi
+	#if [[ "$match" -eq 0 ]]; then
+	#	echo "$GITHUB_REF does not match with any given branch in 'hosts.yml'"
+	#	exit 78
+	#fi
 }
 
 function setup_private_key() {
